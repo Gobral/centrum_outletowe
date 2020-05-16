@@ -1,16 +1,16 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Centrum outletowe</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Centrum outletowe</string>
+    <string name="nav_header_subtitle">Gobral, wersja 0.0.1</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+    <string name="menu_najnowsze">Najnowsze</string>
+    <string name="menu_wyszukiwarka">Wyszukiwarka</string>
+    <string name="menu_rtveuro">RTV Euro AGD</string>
+    <string name="menu_sklep2">Sklep 2</string>
+    <string name="menu_zapisane">Zapsiane</string>
+    <string name="menu_ustawienia">Ustawienia</string>
 </resources>

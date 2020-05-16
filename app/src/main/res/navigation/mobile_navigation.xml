@@ -8,36 +8,36 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.myapplication.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_najnowsze"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.myapplication.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:label="@string/menu_wyszukiwarka"
+        tools:layout="@layout/fragment_wyszukiwarka" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.myapplication.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_rtveuro"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/nav_tools"
         android:name="com.example.myapplication.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
+        android:label="@string/menu_sklep2"
         tools:layout="@layout/fragment_tools" />
 
     <fragment
         android:id="@+id/nav_share"
         android:name="com.example.myapplication.ui.share.ShareFragment"
-        android:label="@string/menu_share"
+        android:label="@string/menu_zapisane"
         tools:layout="@layout/fragment_share" />
 
     <fragment
         android:id="@+id/nav_send"
         android:name="com.example.myapplication.ui.send.SendFragment"
-        android:label="@string/menu_send"
+        android:label="@string/menu_ustawienia"
         tools:layout="@layout/fragment_send" />
 </navigation>
