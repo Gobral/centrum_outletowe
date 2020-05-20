@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        SprawdzanieNowych(this).execute()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
