@@ -24,5 +24,7 @@ class TestAdapter(private val exampleList: List<Produkt>) :
     class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView1: TextView = itemView.text_view_1
         val textView2: TextView = itemView.text_view_2
+        val miniaturka: ImageView = itemView.image_miniaturka
+        val ulubione: ImageView = itemView.image_ulubiome
     }
 }

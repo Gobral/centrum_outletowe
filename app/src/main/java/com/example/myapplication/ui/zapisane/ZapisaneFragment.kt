@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.share
+package com.example.myapplication.ui.zapisane
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.myapplication.R
 
-class ShareFragment : Fragment() {
+class ZapisaneFragment : Fragment() {
 
-    private lateinit var shareViewModel: ShareViewModel
+    private lateinit var zapisaneViewModel: ZapisaneViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        shareViewModel =
-            ViewModelProviders.of(this).get(ShareViewModel::class.java)
+        zapisaneViewModel =
+            ViewModelProviders.of(this).get(ZapisaneViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_share, container, false)
         val textView: TextView = root.findViewById(R.id.text_share)
-        shareViewModel.text.observe(this, Observer {
+        zapisaneViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root

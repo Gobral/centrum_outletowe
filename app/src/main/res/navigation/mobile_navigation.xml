@@ -13,31 +13,31 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.myapplication.ui.gallery.GalleryFragment"
+        android:name="com.example.myapplication.ui.wyszukiwanie.WyszukiwarkaFragment"
         android:label="@string/menu_wyszukiwarka"
         tools:layout="@layout/fragment_wyszukiwarka" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.myapplication.ui.slideshow.SlideshowFragment"
+        android:name="com.example.myapplication.ui.rtveuro.RtvEuroFragment"
         android:label="@string/menu_rtveuro"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/nav_tools"
-        android:name="com.example.myapplication.ui.tools.ToolsFragment"
+        android:name="com.example.myapplication.ui.sklep2.Sklep2Fragment"
         android:label="@string/menu_sklep2"
         tools:layout="@layout/fragment_tools" />
 
     <fragment
         android:id="@+id/nav_share"
-        android:name="com.example.myapplication.ui.share.ShareFragment"
+        android:name="com.example.myapplication.ui.zapisane.ZapisaneFragment"
         android:label="@string/menu_zapisane"
         tools:layout="@layout/fragment_share" />
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="com.example.myapplication.ui.send.SendFragment"
+        android:name="com.example.myapplication.ui.usatwienia.UstawieniaFragment"
         android:label="@string/menu_ustawienia"
         tools:layout="@layout/fragment_send" />
 </navigation>

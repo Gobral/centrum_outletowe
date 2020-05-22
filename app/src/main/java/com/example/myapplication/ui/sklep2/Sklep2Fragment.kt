@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.tools
+package com.example.myapplication.ui.sklep2
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.myapplication.R
 
-class ToolsFragment : Fragment() {
+class Sklep2Fragment : Fragment() {
 
-    private lateinit var toolsViewModel: ToolsViewModel
+    private lateinit var sklep2ViewModel: Sklep2ViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        toolsViewModel =
-            ViewModelProviders.of(this).get(ToolsViewModel::class.java)
+        sklep2ViewModel =
+            ViewModelProviders.of(this).get(Sklep2ViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_tools, container, false)
         val textView: TextView = root.findViewById(R.id.text_tools)
-        toolsViewModel.text.observe(this, Observer {
+        sklep2ViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root

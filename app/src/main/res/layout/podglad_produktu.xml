@@ -1,24 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="180dp">
+    android:layout_height="150dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/image_miniaturka"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            />
         <TextView
             android:id="@+id/text_view_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Line 1"
+            android:ellipsize="end"
+            android:inputType="none"
+            android:maxLines="1"
+            android:text="Nazwa"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            android:layout_toEndOf="@id/image_miniaturka"
+            android:layout_toStartOf="@id/image_ulubiome"/>
         <TextView
             android:id="@+id/text_view_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:inputType="none"
+            android:maxLines="6"
             android:layout_below="@id/text_view_1"
-            android:text="Line 2" />
+            android:text="Opis"
+            android:layout_toEndOf="@id/image_miniaturka"
+            android:layout_toStartOf="@id/image_ulubiome"/>
+        <ImageView
+            android:id="@+id/image_ulubiome"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="6dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_star_border_black_24dp"/>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

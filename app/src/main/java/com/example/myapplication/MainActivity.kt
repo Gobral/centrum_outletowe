@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.os.AsyncTask
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        SprawdzanieNowych(this).execute()
+        SprawdzanieNowych(this).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
