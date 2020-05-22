@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.podglad_produktu.view.*
 
 class TestAdapter(private val exampleList: List<Produkt>) :
@@ -19,6 +20,7 @@ class TestAdapter(private val exampleList: List<Produkt>) :
         val currentItem = exampleList[position]
         holder.textView1.text = currentItem.text1
         holder.textView2.text = currentItem.text2
+        Picasso.get().load(currentItem.obrazsrc).into(holder.miniaturka)
     }
     override fun getItemCount() = exampleList.size
     class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

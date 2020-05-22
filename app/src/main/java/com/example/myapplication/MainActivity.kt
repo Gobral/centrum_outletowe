@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        SprawdzanieNowych(this).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        //SprawdzanieNowych(this).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -53,13 +53,8 @@ class SprawdzanieNowych(aktywnosc: AppCompatActivity) : AsyncTask<Void, Void, In
         super.onPostExecute(result)
         // ...
     }
-    private fun verifyAvailableNetwork(activity: AppCompatActivity):Boolean{
-        val connectivityManager=activity.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val networkInfo=connectivityManager.activeNetwork
-        return  networkInfo!=null
-    }
     fun dodaj(nazwa: String, link: String) {
-
+        //println("{\"strona\": \"$link\", \"nazwa\": \"$nazwa\" }")
         val body: RequestBody = ("{\"strona\": \"$link\", \"nazwa\": \"$nazwa\" }").toRequestBody(JSON)
         val request: Request = Request.Builder()
             .url(exapi)

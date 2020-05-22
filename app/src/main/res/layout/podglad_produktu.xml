@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp">
+    android:layout_height="150dp"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_margin="3dp"
+    card_view:cardCornerRadius="6dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
+            android:layout_marginTop="6dp"
             android:id="@+id/image_miniaturka"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
@@ -35,6 +39,15 @@
             android:text="Opis"
             android:layout_toEndOf="@id/image_miniaturka"
             android:layout_toStartOf="@id/image_ulubiome"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1000.00 zł"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_margin="6dp"
+            android:layout_alignParentBottom="true"
+            android:layout_above="@id/image_miniaturka"/>
         <ImageView
             android:id="@+id/image_ulubiome"
             android:layout_width="40dp"
