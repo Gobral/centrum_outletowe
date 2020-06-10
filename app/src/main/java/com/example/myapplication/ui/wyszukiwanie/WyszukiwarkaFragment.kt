@@ -15,6 +15,8 @@ class WyszukiwarkaFragment : Fragment() {
 
     private lateinit var wyszukiwarkaViewModel: WyszukiwarkaViewModel
     lateinit var adaptor: TestAdapter
+    val exampleList =   ArrayList<Produkt>()
+    private lateinit var scrollManager: Skrol
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,14 +30,13 @@ class WyszukiwarkaFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val exampleList =   ArrayList<Produkt>()
 
-        adaptor = TestAdapter(exampleList)
+        adaptor = TestAdapter(exampleList, this.context)
         recycler_wyszukiwarka.adapter = adaptor
         val menager = LinearLayoutManager(this.context)
         recycler_wyszukiwarka.layoutManager = menager
         ZaladujAsync(exampleList, adaptor, 1).execute()
-        val scrollManager = Skrol(exampleList, adaptor, menager)
+        scrollManager = Skrol(exampleList, adaptor, menager)
         recycler_wyszukiwarka.addOnScrollListener(scrollManager)
         recycler_wyszukiwarka.setHasFixedSize(true)
     }
@@ -45,9 +46,30 @@ class WyszukiwarkaFragment : Fragment() {
         println("wykonano")
         val searchItem = menu.findItem(R.id.action_search)
         val searchView: SearchView = searchItem.actionView as SearchView
-        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE)
+        searchView.imeOptions = EditorInfo.IME_ACTION_DONE
+        searchView.addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener{
+            override fun onViewAttachedToWindow(v: View?) {}
+
+            override fun onViewDetachedFromWindow(v: View?) {
+                scrollManager.wlacz()
+                exampleList.clear()
+                adaptor.notifyDataSetChanged()
+                ZaladujAsync(exampleList, adaptor, 1).execute()
+            }
+        })
+
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
+                var tekst: String = ""
+                if (query != null) {
+                    tekst = query
+                }
+                if(tekst.length >= 2){
+                    scrollManager.wylacz()
+                    exampleList.clear()
+                    adaptor.notifyDataSetChanged()
+                    WyszukajAsync(exampleList, adaptor, tekst).execute()
+                }
                 return false
             }
 

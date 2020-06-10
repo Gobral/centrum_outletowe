@@ -21,5 +21,17 @@ class Skrol(private val exampleList: ArrayList<Produkt>, private val adaptor: Te
         }
         super.onScrolled(recyclerView, dx, dy)
     }
+    fun wylacz() {
+        filtowanie = true
+        ostatniaIlosc = 0
+        jestjuz = 1
+    }
+    fun wlacz() {
+        if (filtowanie) {
+            filtowanie = false
+            ostatniaIlosc = 0
+            jestjuz = 1
+        }
+    }
 
 }

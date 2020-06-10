@@ -10,9 +10,11 @@
         android:layout_height="match_parent">
         <ImageView
             android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
             android:id="@+id/image_miniaturka"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
+            android:layout_above="@id/cena_ceneo"
             />
         <TextView
             android:id="@+id/text_view_1"
@@ -42,12 +44,34 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1000.00 zł"
+            android:id="@+id/cena_ceneo"
+            android:text="1000.00"
             android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_margin="6dp"
-            android:layout_alignParentBottom="true"
-            android:layout_above="@id/image_miniaturka"/>
+            android:textSize="14sp"
+            android:layout_marginStart="6dp"
+            android:layout_above="@id/przecena" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/przecena"
+            android:text="800.00"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginStart="6dp"
+            android:layout_alignParentBottom="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/procent"
+            android:text="-20%"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginStart="6dp"
+            android:layout_toEndOf="@id/przecena"
+            android:textColor="@color/colorPrzecena"
+            android:layout_alignParentBottom="true" />
         <ImageView
             android:id="@+id/image_ulubiome"
             android:layout_width="40dp"
