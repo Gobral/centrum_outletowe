@@ -12,7 +12,7 @@ public class WyszukajAsync(private val exampleList: ArrayList<Produkt>, private 
         val apiResponse = URL(api + nazwa)
         val stronka: Stronka = gson.fromJson(apiResponse.readText(), Stronka::class.java)
         for(o in stronka.okazje){
-            exampleList.add(Produkt(o.nazwa, o.strona, obraz, 1000.0, 30.0))
+            exampleList.add(Produkt(o.nazwa, o.strona, obraz, 1000.0, 30.0, o.strona))
         }
         //exampleList.add(Produkt("Pyk", "Fyk"))
 

@@ -5,9 +5,13 @@ import android.view.*
 import android.view.inputmethod.EditorInfo
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.*
+import com.example.myapplication.room.AppDatabase
+import com.example.myapplication.room.UlubioneEntity
 import kotlinx.android.synthetic.main.fragment_wyszukiwarka.*
 
 
@@ -16,6 +20,7 @@ class WyszukiwarkaFragment : Fragment() {
     private lateinit var wyszukiwarkaViewModel: WyszukiwarkaViewModel
     lateinit var adaptor: TestAdapter
     val exampleList =   ArrayList<Produkt>()
+    var ulubione = ArrayList<UlubioneEntity>()
     private lateinit var scrollManager: Skrol
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +36,23 @@ class WyszukiwarkaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val baza = AppDatabase.getAppDataBase(this.requireContext())
         adaptor = TestAdapter(exampleList, this.context)
+
+        val oberwatorUlubionych : Observer<List<UlubioneEntity>> =
+            Observer<List<UlubioneEntity>> { updatedUlubione ->
+                ulubione = updatedUlubione as ArrayList<UlubioneEntity>
+                val samelinki = ArrayList<String>()
+                for(u in ulubione){
+                    samelinki.add(u.link)
+                }
+                adaptor.setUlubione(samelinki)
+                println("Updejt")
+            }
+
+        val ulubioneiLiveData: LiveData<List<UlubioneEntity>> = baza!!.ulubioneDao().livelubione()
+        ulubioneiLiveData.observe(viewLifecycleOwner, oberwatorUlubionych)
+
         recycler_wyszukiwarka.adapter = adaptor
         val menager = LinearLayoutManager(this.context)
         recycler_wyszukiwarka.layoutManager = menager
