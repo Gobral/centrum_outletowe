@@ -33,7 +33,7 @@
         android:id="@+id/nav_share"
         android:name="com.example.myapplication.ui.zapisane.ZapisaneFragment"
         android:label="@string/menu_zapisane"
-        tools:layout="@layout/fragment_share" />
+        tools:layout="@layout/fragment_zapisane" />
 
     <fragment
         android:id="@+id/nav_send"
