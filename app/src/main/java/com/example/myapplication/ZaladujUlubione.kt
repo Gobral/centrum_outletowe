@@ -40,7 +40,7 @@ public class ZaladujUlubione(private val exampleList: ArrayList<Produkt>, privat
             val response: Response = client.newCall(request).execute()
             val wysloano : WysloanoC = gson.fromJson(response.body!!.string(), WysloanoC::class.java)
             for(o in wysloano.wyslano) {
-                templist.add(Produkt(o.nazwa, o.strona, obraz, 1000.0, 30.0, o.strona))
+                templist.add(Produkt(o.nazwa, o.opis, o.miniaturka, 1000.00, o.cena.toDouble(), o.strona))
             }
             if(templist.size > exampleList.size){
                 exampleList.addAll(templist)

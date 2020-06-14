@@ -12,7 +12,7 @@ public class ZaladujAsync(private val exampleList: ArrayList<Produkt>, private v
         val apiResponse = URL(api + strona)
         val stronka: Stronka = gson.fromJson(apiResponse.readText(), Stronka::class.java)
         for(o in stronka.okazje){
-            exampleList.add(Produkt(o.nazwa, o.strona, obraz, 1000.0, 30.0, o.strona))
+            exampleList.add(Produkt(o.nazwa, o.opis, o.miniaturka, 1000.00, o.cena.toDouble(), o.strona))
         }
         //exampleList.add(Produkt("Pyk", "Fyk"))
 
